@@ -1,6 +1,6 @@
 package storage;
 
-import model.ClientList;
+import model.Client.ClientList;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

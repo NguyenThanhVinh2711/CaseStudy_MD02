@@ -1,6 +1,6 @@
 package controller;
 
-import model.*;
+import model.Product.*;
 import storage.InterfaceReadAndWrite;
 import storage.ReadAndWriteProduct;
 

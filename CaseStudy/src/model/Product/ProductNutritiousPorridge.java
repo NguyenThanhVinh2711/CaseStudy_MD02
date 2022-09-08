@@ -1,8 +1,11 @@
-package model;
+package model.Product;
+
+import model.Product.ProductList;
+import model.StockProduct;
 
 import java.time.LocalDate;
 
-public class ProductNutritiousPorridge extends ProductList {
+public class ProductNutritiousPorridge extends ProductList implements StockProduct {
 
     private int quantityOfNutritiousPorridgeCustomersBuy;
 
@@ -32,9 +35,13 @@ public class ProductNutritiousPorridge extends ProductList {
     }
 
     @Override
+    public int getStock() {
+        return  (getNumberOfProductsInStock() - getQuantityOfNutritiousPorridgeCustomersBuy() ) ;
+    }
+    @Override
     public String toString() {
-        return "ProductNutritiousPorridge{" +
-                "quantityOfNutritiousPorridgeCustomersBuy=" + quantityOfNutritiousPorridgeCustomersBuy +
-                '}';
+        return  super.toString() +
+                " quantityOfNutritiousPorridgeCustomersBuy = " + quantityOfNutritiousPorridgeCustomersBuy +
+                ']';
     }
 }

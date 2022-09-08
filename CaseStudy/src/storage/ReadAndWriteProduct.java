@@ -1,6 +1,6 @@
 package storage;
 
-import model.ProductList;
+import model.Product.ProductList;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;

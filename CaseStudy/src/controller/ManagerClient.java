@@ -1,11 +1,8 @@
 package controller;
 
-import com.sun.security.ntlm.Client;
-import model.ClientList;
-import model.ProductList;
+import model.Client.ClientList;
 import storage.InterfaceReadAndWrite;
 import storage.ReadAndWriteClient;
-import storage.ReadAndWriteProduct;
 
 import java.io.Serializable;
 import java.util.List;

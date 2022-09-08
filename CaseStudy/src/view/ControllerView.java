@@ -1,9 +1,12 @@
 package view;
 
-import model.*;
+import model.Client.ClientList;
+import model.Product.*;
 
 import java.time.LocalDate;
 import java.util.Scanner;
+
+import static controller.ManagerProduct.productLists;
 
 public class ControllerView {
     public static void showMenu() {
@@ -42,10 +45,27 @@ public class ControllerView {
         String nameClient = scannerS.nextLine();
         System.out.println("Nhập số điện thoại khách hàng");
         int phoneNumber = scannerI.nextInt();
-        return new ClientList(idClient, nameClient, phoneNumber);
+        System.out.println("Nhập id sản phẩm khách hàng mua:");
+        String idProduct = scannerS.nextLine();
+
+        boolean check = false;
+        ClientList client = null;
+        ProductList product = null;
+
+        for (int i = 0; i < productLists.size(); i++) {
+            if (productLists.get(i).getIdProduct().equals(idProduct)) {
+                check = true;
+                product = productLists.get(i);
+            }
+        }
+        if (check) {
+            client = new ClientList(idClient, nameClient, phoneNumber, product);
+        }
+        return client;
     }
 
-    public static ProductJam addProductJam(){
+    public static ProductJam addProductJam() {
+
         Scanner scannerI = new Scanner(System.in);
         Scanner scannerS = new Scanner(System.in);
         System.out.println("Nhập id sản phẩm");
@@ -71,9 +91,10 @@ public class ControllerView {
         System.out.println("Nhập số lượng sản phẩm khách hàng mua: ");
         int quantityOfJamCustomersBuy = scannerI.nextInt();
 
-        return new ProductJam(idProduct,nameProduct, LocalDate.of(yearOfManufacture,monthOfManufacture,dayOfManufacture),LocalDate.of(yearExpiration,monthExpiration,dayExpiration),price,quantityOfJamCustomersBuy);
+        return new ProductJam(idProduct, nameProduct, LocalDate.of(yearOfManufacture, monthOfManufacture, dayOfManufacture), LocalDate.of(yearExpiration, monthExpiration, dayExpiration), price, stock, quantityOfJamCustomersBuy);
     }
-    public static ProductMilk addProductMilk(){
+
+    public static ProductMilk addProductMilk() {
         Scanner scannerI = new Scanner(System.in);
         Scanner scannerS = new Scanner(System.in);
         System.out.println("Nhập id sản phẩm");
@@ -99,10 +120,10 @@ public class ControllerView {
         System.out.println("Nhập số lượng sản phẩm khách hàng mua: ");
         int quantityOfJamCustomersBuy = scannerI.nextInt();
 
-        return new ProductMilk (idProduct,nameProduct, LocalDate.of(yearOfManufacture,monthOfManufacture,dayOfManufacture),LocalDate.of(yearExpiration,monthExpiration,dayExpiration),price,quantityOfJamCustomersBuy);
+        return new ProductMilk(idProduct, nameProduct, LocalDate.of(yearOfManufacture, monthOfManufacture, dayOfManufacture), LocalDate.of(yearExpiration, monthExpiration, dayExpiration), price, quantityOfJamCustomersBuy);
     }
 
-    public static ProductNoodles addProductNoodles(){
+    public static ProductNoodles addProductNoodles() {
         Scanner scannerI = new Scanner(System.in);
         Scanner scannerS = new Scanner(System.in);
         System.out.println("Nhập id sản phẩm");
@@ -128,10 +149,10 @@ public class ControllerView {
         System.out.println("Nhập số lượng sản phẩm khách hàng mua: ");
         int quantityOfJamCustomersBuy = scannerI.nextInt();
 
-        return new ProductNoodles(idProduct,nameProduct, LocalDate.of(yearOfManufacture,monthOfManufacture,dayOfManufacture),LocalDate.of(yearExpiration,monthExpiration,dayExpiration),price,quantityOfJamCustomersBuy);
+        return new ProductNoodles(idProduct, nameProduct, LocalDate.of(yearOfManufacture, monthOfManufacture, dayOfManufacture), LocalDate.of(yearExpiration, monthExpiration, dayExpiration), price, quantityOfJamCustomersBuy);
     }
 
-    public static ProductNutritiousPorridge addProductNutritiousPorridge(){
+    public static ProductNutritiousPorridge addProductNutritiousPorridge() {
         Scanner scannerI = new Scanner(System.in);
         Scanner scannerS = new Scanner(System.in);
         System.out.println("Nhập id sản phẩm");
@@ -157,10 +178,10 @@ public class ControllerView {
         System.out.println("Nhập số lượng sản phẩm khách hàng mua: ");
         int quantityOfJamCustomersBuy = scannerI.nextInt();
 
-        return new ProductNutritiousPorridge (idProduct,nameProduct, LocalDate.of(yearOfManufacture,monthOfManufacture,dayOfManufacture),LocalDate.of(yearExpiration,monthExpiration,dayExpiration),price,quantityOfJamCustomersBuy);
+        return new ProductNutritiousPorridge(idProduct, nameProduct, LocalDate.of(yearOfManufacture, monthOfManufacture, dayOfManufacture), LocalDate.of(yearExpiration, monthExpiration, dayExpiration), price, quantityOfJamCustomersBuy);
     }
 
-    public static ProductSoda addProductSoda(){
+    public static ProductSoda addProductSoda() {
         Scanner scannerI = new Scanner(System.in);
         Scanner scannerS = new Scanner(System.in);
         System.out.println("Nhập id sản phẩm");
@@ -186,7 +207,7 @@ public class ControllerView {
         System.out.println("Nhập số lượng sản phẩm khách hàng mua: ");
         int quantityOfJamCustomersBuy = scannerI.nextInt();
 
-        return new ProductSoda(idProduct,nameProduct, LocalDate.of(yearOfManufacture,monthOfManufacture,dayOfManufacture),LocalDate.of(yearExpiration,monthExpiration,dayExpiration),price,quantityOfJamCustomersBuy);
+        return new ProductSoda(idProduct, nameProduct, LocalDate.of(yearOfManufacture, monthOfManufacture, dayOfManufacture), LocalDate.of(yearExpiration, monthExpiration, dayExpiration), price, quantityOfJamCustomersBuy);
     }
 
 

@@ -1,4 +1,4 @@
-package model;
+package model.Product;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -81,13 +81,11 @@ public class ProductList implements Serializable {
 
     @Override
     public String toString() {
-        return "ProductList{" +
-                "idProduct='" + idProduct + '\'' +
-                ", nameProduct='" + nameProduct + '\'' +
-                ", dateOfManufacture=" + dateOfManufacture +
-                ", expirationDate=" + expirationDate +
-                ", price=" + price +
-                ", numberOfProductsInStock=" + numberOfProductsInStock +
-                '}';
+        return "[" + "idProduct = '" + idProduct + '\'' +
+                ", nameProduct = '" + nameProduct + '\'' +
+                ", dateOfManufacture = " + dateOfManufacture +
+                ", expirationDate = " + expirationDate +
+                ", price = " + price + ", numberOfProductsInStock = " +numberOfProductsInStock
+                ;
     }
 }

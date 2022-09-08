@@ -2,11 +2,13 @@ package view;
 
 import controller.ManagerClient;
 import controller.ManagerProduct;
-import model.*;
+import model.Client.ClientList;
+import model.Product.*;
 
 import java.util.Scanner;
-
 import static controller.ManagerClient.*;
+import static controller.ManagerProduct.deleteProduct;
+import static controller.ManagerProduct.displayProductList;
 import static view.ControllerView.*;
 
 public class Main {
@@ -27,42 +29,38 @@ public class Main {
                 case 2:
                     ProductJam productJam = addProductJam();
                     controllerProduct.addProductJam(productJam);
+                    break;
                 case 3:
-                    ProductMilk productMilk= addProductMilk();
+                    ProductMilk productMilk = addProductMilk();
                     controllerProduct.addProductMilk(productMilk);
+                    break;
                 case 4:
                     ProductNoodles productNoodles = addProductNoodles();
                     controllerProduct.addProductNoodles(productNoodles);
+                    break;
                 case 5:
                     ProductNutritiousPorridge productNutritiousPorridge = addProductNutritiousPorridge();
                     controllerProduct.addProductNutritiousPorridge(productNutritiousPorridge);
+                    break;
                 case 6:
                     ProductSoda productSoda = addProductSoda();
                     controllerProduct.addProductSoda(productSoda);
-//                case 3:
-//                    deleteClient();
-//                    break;
-////            case 4:
-//                case 5:
-//                    editClientList();
-//                    break;
-////            case 6:
-//                case 7:
-//                    findIdClientList();
-//                    break;
-////            case 8:
-//                case 9:
-//                    displayClientList();
-//                    break;
-////            case 10:
-//                case 11:
-//                    displayClientListAndProduct();
-//                    break;
-////            case 12:
-////
-//                case 13:
-//                    System.exit(0);
-//                    break;
+                    break;
+                case 7:
+                    deleteClient();
+                    break;
+                case 8:
+                    deleteProduct();
+                    break;
+                case 17:
+                    displayClientList();
+                    break;
+                case 18:
+                    displayProductList();
+                    break;
+                case 19:
+                    displayClientListAndProduct();
+                    break;
             }
         } while (true);
     }

@@ -210,5 +210,211 @@ public class ControllerView {
         return new ProductSoda(idProduct, nameProduct, LocalDate.of(yearOfManufacture, monthOfManufacture, dayOfManufacture), LocalDate.of(yearExpiration, monthExpiration, dayExpiration), price, quantityOfJamCustomersBuy);
     }
 
+    public static void editProductListMilk(){
+        Scanner scannerI = new Scanner(System.in);
+        Scanner scannerS = new Scanner(System.in);
+        System.out.println("Nhập id sản phẩm cần sửa:");
+        String idProduct = scannerI.nextLine();
+        for (int i = 0; i < productLists.size(); i++) {
+            if (productLists.get(i).getIdProduct().equals(idProduct)){
+                System.out.println("Nhập id sản phẩm mới");
+                String newIdProduct = scannerS.nextLine();
+                System.out.println("Nhập tên sản phẩm mới");
+                String newNameProduct = scannerS.nextLine();
+                System.out.println("Nhập ngày sản xuất mới");
+                int newDayOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập tháng sản xuất mới");
+                int newMonthOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập năm sản xuất mới");
+                int newYearOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập ngày hết hạn mới");
+                int newDayExpiration = scannerI.nextInt();
+                System.out.println("Nhập tháng hết hạn mới");
+                int newMonthExpiration= scannerI.nextInt();
+                System.out.println("Nhập năm hết hạn mới");
+                int newYearExpiration = scannerI.nextInt();
+                System.out.println("Nhập giá sản phẩm mới");
+                int newPrice = scannerI.nextInt();
+                System.out.println("Nhập tồn kho mới");
+                int newStock = scannerI.nextInt();
+                System.out.println("Nhập số lượng sản phẩm mới khách hàng mua: ");
+                int newCustomerBuy = scannerI.nextInt();
 
+                productLists.get(i).setIdProduct(newIdProduct);
+                productLists.get(i).setNameProduct(newNameProduct);
+                productLists.get(i).setDateOfManufacture(LocalDate.of(newYearOfManufacture, newMonthOfManufacture, newDayOfManufacture));
+                productLists.get(i).setExpirationDate(LocalDate.of(newYearExpiration, newMonthExpiration, newDayExpiration));
+                productLists.get(i).setPrice(newPrice);
+                productLists.get(i).setNumberOfProductsInStock(newStock);
+                ProductMilk  pM = (ProductMilk) productLists.get(i);
+                pM.setQuantityOfMilkCustomersBuy(newCustomerBuy);
+            }
+        }
+    }
+
+    public static void editProductListJam() {
+        Scanner scannerI = new Scanner(System.in);
+        Scanner scannerS = new Scanner(System.in);
+        System.out.println("Nhập id sản phẩm cần sửa:");
+        String idProduct = scannerI.nextLine();
+        for (int i = 0; i < productLists.size(); i++) {
+            if (productLists.get(i).getIdProduct().equals(idProduct)) {
+                System.out.println("Nhập id sản phẩm mới");
+                String newIdProduct = scannerS.nextLine();
+                System.out.println("Nhập tên sản phẩm mới");
+                String newNameProduct = scannerS.nextLine();
+                System.out.println("Nhập ngày sản xuất mới");
+                int newDayOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập tháng sản xuất mới");
+                int newMonthOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập năm sản xuất mới");
+                int newYearOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập ngày hết hạn mới");
+                int newDayExpiration = scannerI.nextInt();
+                System.out.println("Nhập tháng hết hạn mới");
+                int newMonthExpiration = scannerI.nextInt();
+                System.out.println("Nhập năm hết hạn mới");
+                int newYearExpiration = scannerI.nextInt();
+                System.out.println("Nhập giá sản phẩm mới");
+                int newPrice = scannerI.nextInt();
+                System.out.println("Nhập tồn kho mới");
+                int newStock = scannerI.nextInt();
+                System.out.println("Nhập số lượng sản phẩm mới khách hàng mua: ");
+                int newCustomerBuy = scannerI.nextInt();
+
+                productLists.get(i).setIdProduct(newIdProduct);
+                productLists.get(i).setNameProduct(newNameProduct);
+                productLists.get(i).setDateOfManufacture(LocalDate.of(newYearOfManufacture, newMonthOfManufacture, newDayOfManufacture));
+                productLists.get(i).setExpirationDate(LocalDate.of(newYearExpiration, newMonthExpiration, newDayExpiration));
+                productLists.get(i).setPrice(newPrice);
+                productLists.get(i).setNumberOfProductsInStock(newStock);
+                ProductJam pJ = (ProductJam) productLists.get(i);
+                pJ.setQuantityOfJamCustomersBuy(newCustomerBuy);
+            }
+        }
+    }
+
+    public static void editProductListNoodles(){
+        Scanner scannerI = new Scanner(System.in);
+        Scanner scannerS = new Scanner(System.in);
+        System.out.println("Nhập id sản phẩm cần sửa:");
+        String idProduct = scannerI.nextLine();
+        for (int i = 0; i < productLists.size(); i++) {
+            if (productLists.get(i).getIdProduct().equals(idProduct)){
+                System.out.println("Nhập id sản phẩm mới");
+                String newIdProduct = scannerS.nextLine();
+                System.out.println("Nhập tên sản phẩm mới");
+                String newNameProduct = scannerS.nextLine();
+                System.out.println("Nhập ngày sản xuất mới");
+                int newDayOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập tháng sản xuất mới");
+                int newMonthOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập năm sản xuất mới");
+                int newYearOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập ngày hết hạn mới");
+                int newDayExpiration = scannerI.nextInt();
+                System.out.println("Nhập tháng hết hạn mới");
+                int newMonthExpiration= scannerI.nextInt();
+                System.out.println("Nhập năm hết hạn mới");
+                int newYearExpiration = scannerI.nextInt();
+                System.out.println("Nhập giá sản phẩm mới");
+                int newPrice = scannerI.nextInt();
+                System.out.println("Nhập tồn kho mới");
+                int newStock = scannerI.nextInt();
+                System.out.println("Nhập số lượng sản phẩm mới khách hàng mua: ");
+                int newCustomerBuy = scannerI.nextInt();
+
+                productLists.get(i).setIdProduct(newIdProduct);
+                productLists.get(i).setNameProduct(newNameProduct);
+                productLists.get(i).setDateOfManufacture(LocalDate.of(newYearOfManufacture, newMonthOfManufacture, newDayOfManufacture));
+                productLists.get(i).setExpirationDate(LocalDate.of(newYearExpiration, newMonthExpiration, newDayExpiration));
+                productLists.get(i).setPrice(newPrice);
+                productLists.get(i).setNumberOfProductsInStock(newStock);
+                ProductNoodles  pNoodles = (ProductNoodles) productLists.get(i);
+                pNoodles.setQuantityOfNoodlesCustomersBuy(newCustomerBuy);
+            }
+        }
+    }
+    public static void editProductListNutritiousPorridge(){
+        Scanner scannerI = new Scanner(System.in);
+        Scanner scannerS = new Scanner(System.in);
+        System.out.println("Nhập id sản phẩm cần sửa:");
+        String idProduct = scannerI.nextLine();
+        for (int i = 0; i < productLists.size(); i++) {
+            if (productLists.get(i).getIdProduct().equals(idProduct)){
+                System.out.println("Nhập id sản phẩm mới");
+                String newIdProduct = scannerS.nextLine();
+                System.out.println("Nhập tên sản phẩm mới");
+                String newNameProduct = scannerS.nextLine();
+                System.out.println("Nhập ngày sản xuất mới");
+                int newDayOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập tháng sản xuất mới");
+                int newMonthOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập năm sản xuất mới");
+                int newYearOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập ngày hết hạn mới");
+                int newDayExpiration = scannerI.nextInt();
+                System.out.println("Nhập tháng hết hạn mới");
+                int newMonthExpiration= scannerI.nextInt();
+                System.out.println("Nhập năm hết hạn mới");
+                int newYearExpiration = scannerI.nextInt();
+                System.out.println("Nhập giá sản phẩm mới");
+                int newPrice = scannerI.nextInt();
+                System.out.println("Nhập tồn kho mới");
+                int newStock = scannerI.nextInt();
+                System.out.println("Nhập số lượng sản phẩm mới khách hàng mua: ");
+                int newCustomerBuy = scannerI.nextInt();
+
+                productLists.get(i).setIdProduct(newIdProduct);
+                productLists.get(i).setNameProduct(newNameProduct);
+                productLists.get(i).setDateOfManufacture(LocalDate.of(newYearOfManufacture, newMonthOfManufacture, newDayOfManufacture));
+                productLists.get(i).setExpirationDate(LocalDate.of(newYearExpiration, newMonthExpiration, newDayExpiration));
+                productLists.get(i).setPrice(newPrice);
+                productLists.get(i).setNumberOfProductsInStock(newStock);
+                ProductNutritiousPorridge  pNp = (ProductNutritiousPorridge) productLists.get(i);
+                pNp.setQuantityOfNutritiousPorridgeCustomersBuy(newCustomerBuy);
+            }
+        }
+    }
+    public static void editProductListSoda(){
+        Scanner scannerI = new Scanner(System.in);
+        Scanner scannerS = new Scanner(System.in);
+        System.out.println("Nhập id sản phẩm cần sửa:");
+        String idProduct = scannerI.nextLine();
+        for (int i = 0; i < productLists.size(); i++) {
+            if (productLists.get(i).getIdProduct().equals(idProduct)){
+                System.out.println("Nhập id sản phẩm mới");
+                String newIdProduct = scannerS.nextLine();
+                System.out.println("Nhập tên sản phẩm mới");
+                String newNameProduct = scannerS.nextLine();
+                System.out.println("Nhập ngày sản xuất mới");
+                int newDayOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập tháng sản xuất mới");
+                int newMonthOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập năm sản xuất mới");
+                int newYearOfManufacture = scannerI.nextInt();
+                System.out.println("Nhập ngày hết hạn mới");
+                int newDayExpiration = scannerI.nextInt();
+                System.out.println("Nhập tháng hết hạn mới");
+                int newMonthExpiration= scannerI.nextInt();
+                System.out.println("Nhập năm hết hạn mới");
+                int newYearExpiration = scannerI.nextInt();
+                System.out.println("Nhập giá sản phẩm mới");
+                int newPrice = scannerI.nextInt();
+                System.out.println("Nhập tồn kho mới");
+                int newStock = scannerI.nextInt();
+                System.out.println("Nhập số lượng sản phẩm mới khách hàng mua: ");
+                int newCustomerBuy = scannerI.nextInt();
+
+                productLists.get(i).setIdProduct(newIdProduct);
+                productLists.get(i).setNameProduct(newNameProduct);
+                productLists.get(i).setDateOfManufacture(LocalDate.of(newYearOfManufacture, newMonthOfManufacture, newDayOfManufacture));
+                productLists.get(i).setExpirationDate(LocalDate.of(newYearExpiration, newMonthExpiration, newDayExpiration));
+                productLists.get(i).setPrice(newPrice);
+                productLists.get(i).setNumberOfProductsInStock(newStock);
+                ProductSoda  pS = (ProductSoda) productLists.get(i);
+                pS.setQuantityOfSodaCustomersBuy(newCustomerBuy);
+            }
+        }
+    }
 }

@@ -1,6 +1,6 @@
 package controller;
 
-import model.Client.ClientList;
+import model.client.ClientList;
 import storage.InterfaceReadAndWrite;
 import storage.ReadAndWriteClient;
 

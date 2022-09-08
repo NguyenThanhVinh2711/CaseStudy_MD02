@@ -1,7 +1,7 @@
 package view;
 
-import model.Client.ClientList;
-import model.Product.*;
+import model.client.ClientList;
+import model.product.*;
 
 import java.time.LocalDate;
 import java.util.Scanner;

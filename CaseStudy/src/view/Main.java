@@ -2,8 +2,8 @@ package view;
 
 import controller.ManagerClient;
 import controller.ManagerProduct;
-import model.Client.ClientList;
-import model.Product.*;
+import model.client.ClientList;
+import model.product.*;
 
 import java.util.Scanner;
 import static controller.ManagerClient.*;

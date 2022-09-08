@@ -1,6 +1,5 @@
-package model.Product;
+package model.product;
 
-import model.Product.ProductList;
 import model.StockProduct;
 
 import java.time.LocalDate;

@@ -1,10 +1,11 @@
 package model.product;
 
-import model.StockProduct;
+import model.Receipt;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class ProductMilk extends ProductList implements StockProduct {
+public class ProductMilk extends ProductList  implements Serializable , Receipt {
     private int quantityOfMilkCustomersBuy;
 
     public ProductMilk() {
@@ -20,7 +21,7 @@ public class ProductMilk extends ProductList implements StockProduct {
     }
 
     public ProductMilk(String idProduct, String name, LocalDate dateOfManufacture, LocalDate expirationDate, int price, int numberOfProductsInStock, int quantityOfMilkCustomersBuy) {
-        super(idProduct, name, dateOfManufacture, expirationDate, price, numberOfProductsInStock);
+        super(idProduct, name, dateOfManufacture, expirationDate, price);
         this.quantityOfMilkCustomersBuy = quantityOfMilkCustomersBuy;
     }
 
@@ -33,8 +34,8 @@ public class ProductMilk extends ProductList implements StockProduct {
     }
 
     @Override
-    public int getStock() {
-        return (getNumberOfProductsInStock() - getQuantityOfMilkCustomersBuy());
+    public double getReceipt() {
+        return getQuantityOfMilkCustomersBuy()*getPrice();
     }
 
     @Override

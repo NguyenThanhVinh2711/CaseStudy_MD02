@@ -1,10 +1,11 @@
 package model.product;
 
-import model.StockProduct;
+import model.Receipt;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class ProductJam extends ProductList implements StockProduct {
+public class ProductJam extends ProductList implements Serializable, Receipt {
     private int quantityOfJamCustomersBuy;
 
     public ProductJam() {
@@ -14,13 +15,9 @@ public class ProductJam extends ProductList implements StockProduct {
         this.quantityOfJamCustomersBuy = quantityOfJamCustomersBuy;
     }
 
-    public ProductJam(String idProduct, String name, LocalDate dateOfManufacture, LocalDate expirationDate, int price, int quantityOfJamCustomersBuy) {
-        super(idProduct, name, dateOfManufacture, expirationDate, price);
-        this.quantityOfJamCustomersBuy = quantityOfJamCustomersBuy;
-    }
 
-    public ProductJam(String idProduct, String name, LocalDate dateOfManufacture, LocalDate expirationDate, int price, int numberOfProductsInStock, int quantityOfJamCustomersBuy) {
-        super(idProduct, name, dateOfManufacture, expirationDate, price, numberOfProductsInStock);
+    public ProductJam(String idProduct, String name, LocalDate dateOfManufacture, LocalDate expirationDate, double price, int quantityOfJamCustomersBuy) {
+        super(idProduct, name, dateOfManufacture, expirationDate, price);
         this.quantityOfJamCustomersBuy = quantityOfJamCustomersBuy;
     }
 
@@ -32,8 +29,9 @@ public class ProductJam extends ProductList implements StockProduct {
         this.quantityOfJamCustomersBuy = quantityOfJamCustomersBuy;
     }
 
-    public int getStock() {
-        return  (getNumberOfProductsInStock() - getQuantityOfJamCustomersBuy() ) ;
+    @Override
+    public double getReceipt() {
+        return getQuantityOfJamCustomersBuy()*getPrice();
     }
 
     @Override

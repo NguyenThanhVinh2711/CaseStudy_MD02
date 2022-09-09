@@ -8,27 +8,18 @@ public class ProductList implements Serializable {
     private String nameProduct;
     private LocalDate dateOfManufacture;
     private LocalDate expirationDate;
-    private int price;
-    private int numberOfProductsInStock;
+    private double price;
 
     public ProductList() {
     }
 
-    public ProductList(String idProduct, String nameProduct, LocalDate dateOfManufacture, LocalDate expirationDate, int price) {
-        this.idProduct = idProduct;
-        this.nameProduct = nameProduct;
-        this.dateOfManufacture = dateOfManufacture;
-        this.expirationDate = expirationDate;
-        this.price = price;
-    }
-
-    public ProductList(String idProduct, String name, LocalDate dateOfManufacture, LocalDate expirationDate, int price, int numberOfProductsInStock) {
+    public ProductList(String idProduct, String name, LocalDate dateOfManufacture, LocalDate expirationDate, double price) {
         this.idProduct = idProduct;
         this.nameProduct = name;
         this.dateOfManufacture = dateOfManufacture;
         this.expirationDate = expirationDate;
         this.price = price;
-        this.numberOfProductsInStock = numberOfProductsInStock;
+
     }
 
     public String getIdProduct() {
@@ -63,7 +54,7 @@ public class ProductList implements Serializable {
         this.expirationDate = expirationDate;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
@@ -71,13 +62,7 @@ public class ProductList implements Serializable {
         this.price = price;
     }
 
-    public int getNumberOfProductsInStock() {
-        return numberOfProductsInStock;
-    }
 
-    public void setNumberOfProductsInStock(int numberOfProductsInStock) {
-        this.numberOfProductsInStock = numberOfProductsInStock;
-    }
 
     @Override
     public String toString() {
@@ -85,7 +70,7 @@ public class ProductList implements Serializable {
                 ", nameProduct = '" + nameProduct + '\'' +
                 ", dateOfManufacture = " + dateOfManufacture +
                 ", expirationDate = " + expirationDate +
-                ", price = " + price + ", numberOfProductsInStock = " +numberOfProductsInStock
+                ", price = " + price
                 ;
     }
 }
